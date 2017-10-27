@@ -1,9 +1,19 @@
-app.get("/apt/friends", function(req, res) {
-  for (var i = 0; i < friends.length; i++) {
-    return res.json(friends[i])
-  } //for loop done
-})//get done
+var friendsData = require('../data/friends.js');
+var path = require('path');
 
-app.post("/api/friends", function(req, res) {
+
+module.exports = function(app){
+
+  app.get('/api/friends', function(req, res){
+    res.json(friendsData);
+  });
+
   
-}) //post done
+  app.post('/api/friends', function(req, res){
+
+    friendsData.push(req.body);
+
+  }); //end post
+
+
+}

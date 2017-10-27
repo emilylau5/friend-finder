@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friend Finder</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div>
+      <h1>Survey Questions</h1>
+    </div>
+    <hr>
+    <div>
+      <h3>About You</h3>
+      <p>Name (Required)</p>
+      <input type="text" id="name" class="form-control">
+      <p>Link to Photo Image(Required)</p>
+      <input type="text" id="photo" class="form-control">
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 1</h4>
+      <h5>You like long walks on the beach.</h5>
+      <select class="browser-default" id="q1" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 2</h4>
+      <h5>You like to dress in street-wear.</h5>
+      <select class="browser-default" id="q2" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 3</h4>
+      <h5>Your closet is filled with fire jawns.</h5>
+      <select class="browser-default" id="q3" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 4</h4>
+      <h5>You like going on hikes.</h5>
+      <select class="browser-default" id="q4" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 5</h4>
+      <h5>You prefer clout goggles over regular sunglasses.</h5>
+      <select class="browser-default" id="q5" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 6</h4>
+      <h5>Staying in and watching movies is a perfect date night.</h5>
+      <select class="browser-default" id="q6" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 7</h4>
+      <h5>Sitting together in silence isn't awkward</h5>
+      <select class="browser-default" id="q7" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 8</h4>
+      <h5></h5>
+      <select class="browser-default" id="q8" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 9</h4>
+      <h5></h5>
+      <select class="browser-default" id="q9" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+    </div>
+    <hr>
+    <div class="quest">
+      <h4>Question 10</h4>
+      <h5></h5>
+      <select class="browser-default" id="q10" type="number">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br><br><br>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit
+        </button>
+    </div>
+    <br><hr>
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/friends">API Friends List</a>
+      </div>
+    </footer>
+  </div>
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Your Match</h4>
+      <div class="modal-body">
+        <h2 id="matchName"></h2>
+        <img id="matchImg" alt="" style="width:auto; height:auto; max-width:400px; max-height:350px;">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" id="close" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+    </div>
+  </div>
+  <div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matchImg" alt="" style="width:auto; height:auto; max-width:400px; max-height:350px;">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    $("#submit").on("click", function() {
+    $("#modal1").leanModal({
+       dismissible: false,
+       complete: function(){
+         alert("modal was closed.")
+       }
+     }).openModal()
+      
+    function validateForm() {
+      var isValid = true;
+      $('.form-control').each(function() {
+      if ($(this).val() === '')
+        isValid = false;
+        });
+      $('.chosen-select').each(function() {
+      if ($(this).val() === "")
+        isValid = false
+        })
+      return isValid;
+    }
+  
+  if (validateForm() == true) {
+    var userData = {
+    name: $("#name").val(),
+    photo: $("#photo").val(),
+    scores: [parseInt($("#q1").val()), parseInt($("#q2").val()), parseInt($("#q3").val()), parseInt($("#q4").val()), parseInt($("#q5").val()), parseInt($("#q6").val()), parseInt($("#q7").val()), parseInt($("#q8").val()), parseInt($("#q9").val()), parseInt($("#q10").val()), ]
+    }
+  }
+
+  $.get("/api/friends", userData, function(data) {
+                
+    var inputArr = [];
+    //this is an array
+    var inputScore = userData.scores;
+
+    for (i = 0; i < inputScore.length; i++) {
+    //targets the scores arrays in all the objects
+      var inputNums = parseInt(inputScore[i]);
+      inputArr.push(inputNums);
+    }
+
+
+
+  </script>
+</body>
+</html>
