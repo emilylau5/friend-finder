@@ -8,8 +8,14 @@ var PORT = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-require('./app/routing/api-routes.js');
-require('./app/routing/html-routes.js');
+app.get("/survey", function(req, res) {
+  res.sendFile(path.join(__dirname, "app/public/survey.html"))
+})
+
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "app/public/home.html"))
+})
+
 
 app.listen(PORT, function(){
   console.log("we listening")
