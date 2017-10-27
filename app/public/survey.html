@@ -33,7 +33,7 @@
     <hr>
     <div class="quest">
       <h4>Question 2</h4>
-      <h5>You like to dress in street-wear.</h5>
+      <h5>You own a pair of yeezys.</h5>
       <select class="browser-default" id="q2" type="number">
         <option value="" disabled selected>Choose your option</option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -98,7 +98,7 @@
     <hr>
     <div class="quest">
       <h4>Question 7</h4>
-      <h5>Sitting together in silence isn't awkward</h5>
+      <h5>Sitting together in silence isn't awkward.</h5>
       <select class="browser-default" id="q7" type="number">
         <option value="" disabled selected>Choose your option</option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -111,7 +111,7 @@
     <hr>
     <div class="quest">
       <h4>Question 8</h4>
-      <h5></h5>
+      <h5>You eat around 5 meals a day.</h5>
       <select class="browser-default" id="q8" type="number">
         <option value="" disabled selected>Choose your option</option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -124,7 +124,7 @@
     <hr>
     <div class="quest">
       <h4>Question 9</h4>
-      <h5></h5>
+      <h5>You use your turn signal when you switch lanes.</h5>
       <select class="browser-default" id="q9" type="number">
         <option value="" disabled selected>Choose your option</option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -137,7 +137,7 @@
     <hr>
     <div class="quest">
       <h4>Question 10</h4>
-      <h5></h5>
+      <h5>80% of your closet consists of black or white clothing.</h5>
       <select class="browser-default" id="q10" type="number">
         <option value="" disabled selected>Choose your option</option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -182,7 +182,7 @@
           <img id="matchImg" alt="" style="width:auto; height:auto; max-width:400px; max-height:350px;">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" id="leave" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -208,29 +208,78 @@
         })
       return isValid;
     }
-  
-  if (validateForm() == true) {
-    var userData = {
-    name: $("#name").val(),
-    photo: $("#photo").val(),
-    scores: [parseInt($("#q1").val()), parseInt($("#q2").val()), parseInt($("#q3").val()), parseInt($("#q4").val()), parseInt($("#q5").val()), parseInt($("#q6").val()), parseInt($("#q7").val()), parseInt($("#q8").val()), parseInt($("#q9").val()), parseInt($("#q10").val()), ]
+  $.post("/api/friends", userData, function(data){
+    if (validateForm() == true) {
+      var userData = {
+      name: $("#name").val(),
+      photo: $("#photo").val(),
+      scores: [parseInt($("#q1").val()), parseInt($("#q2").val()), parseInt($("#q3").val()), parseInt($("#q4").val()), parseInt($("#q5").val()), parseInt($("#q6").val()), parseInt($("#q7").val()), parseInt($("#q8").val()), parseInt($("#q9").val()), parseInt($("#q10").val()), ]
+      }
     }
-  }
+  })
 
   $.get("/api/friends", userData, function(data) {
                 
     var inputArr = [];
-    //this is an array
     var inputScore = userData.scores;
 
-    for (i = 0; i < inputScore.length; i++) {
+    var possibleFriend = [];
+    for (index in inputScore) {
     //targets the scores arrays in all the objects
-      var inputNums = parseInt(inputScore[i]);
+      var inputNums = parseInt(inputScore[index]);
       inputArr.push(inputNums);
     }
+    for (index in data) {
+      var otherFriend = [];
+      for(i in data[j].scores) {
+        var nums = parseInt(data[index].scores[i])
+        j.push(nums);
+      }
+    }
+    var differenceSum;
+    for (var i = 0; i < 10; i++) {
+      if (inputArr[i] !== otherFriend[i]) {
+        differenceSum += inputArr[i] - otherFriend[i]
+      }
+    }
+    Math.abs(differenceSum);
+    if (differenceSum < 8) {
+      possibleFriend.push(data[j].name)
+    }
+  });
+  function newFriend() {
+    if (possibleFriend.length === 0) {
+      $("#matchName").text("Sorry we have no matches for you:(");
+      $("#modal1").leanModal({
+        dismissible: false,
+        complete: function(){
+          alert("modal was closed.")
+        }
+      })
+    }//end if
+    else {
+      var randomOption = Math.floor((Math.random() * possibleFriend.length) + 0);
+      var newName = JSON.stringify(possibleFriend[randomOption].name);
+      var newPic = possibleFriend[randomOption].photo;
 
+      ("#matchName").text(name);
+      $('#matchImg').attr("src", photo);
 
+      $("#modal1").leanModal({
+        dismissible: false,
+        complete: function(){
+          alert("modal was closed.")
+        }
+      });
+    }//end else
+    newfriend();
+  }//end newfriend()
 
+  $('#leave').on('click', function() {
+    $.get('/', function(req, res) {
+      window.location.replace("index.html");
+    });
+  });
   </script>
 </body>
 </html>
